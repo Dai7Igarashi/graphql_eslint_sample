@@ -1,0 +1,31 @@
+{
+  "name": "@dai7igarashi/graphql-operation-require-typename",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": "20",
+    "npm": ">=10"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "directory": "packages/calc-minus",
+    "type": "git",
+    "url": "https://github.com/Dai7Igarashi/monorepo_publish_sample.git"
+  },
+  "scripts": {
+    "build": "run-p build:*",
+    "build:cjs": "tsc -p tsconfig.json",
+    "test": "run-p test:*",
+    "test:ts": "tsc -p tsconfig.json --noEmit"
+  },
+  "author": "Daichi Igarashi <40178733+Dai7Igarashi@users.noreply.github.com>",
+  "license": "MIT"
+}
