@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "packages": ["packages/*"],
+  "version": "independent",
+  "npmClient": "npm",
+  "useNx": false,
+  "command": {
+    "publish": {
+      "createRelease": "github",
+      "noPrivate": true,
+      "registry": "https://npm.pkg.github.com"
+    },
+    "version": {
+      "message": "chore(release): publish",
+      "allowBranch": ["release/*"],
+      "conventionalCommits": true,
+      "forceGitTag": true,
+      "includeMergedTags": true,
+      "noPrivate": true
+    }
+  }
+}

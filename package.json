@@ -2,5 +2,23 @@
   "name": "graphql-eslint-sample",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": "20",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "build": "lerna run build",
+    "test": "lerna run test"
+  },
+  "author": "Daichi Igarashi<40178733+Dai7Igarashi@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^8.0.0",
+    "npm-run-all2": "^6.1.1",
+    "typescript": "^5.3.3"
+  }
 }
