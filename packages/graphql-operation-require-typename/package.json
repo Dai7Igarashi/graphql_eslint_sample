@@ -27,5 +27,8 @@
     "test:ts": "tsc -p tsconfig.json --noEmit"
   },
   "author": "Daichi Igarashi <40178733+Dai7Igarashi@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@graphql-eslint/eslint-plugin": "^3.20.1"
+  }
 }

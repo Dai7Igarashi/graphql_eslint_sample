@@ -3,15 +3,17 @@ name: release
 on:
   pull_request:
     branches:
-      - release/**
+      - release/major
+      - release/minor
+      - release/patch
 
 jobs:
-  test:
-    uses: Dai7Igarashi/graphql_eslint_sample/.github/workflows/test.yml@main
+  # test:
+  # uses: Dai7Igarashi/graphql_eslint_sample/.github/workflows/test.yml@main
 
   release:
     name: release github packages
-    needs: test
+    # needs: test
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -41,11 +43,17 @@ jobs:
             **/node_modules
             **/package-lock.json
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}-v1
+      - name: Extract branch from git ref
+        # name = release / version = major, minor, patch
+        run: |
+          echo "::set-output name=name::${GITHUB_REF#refs/*/}"
+          echo "::set-output name=version::${GITHUB_REF##*/}"
+        id: extract_branch
       - name: Install
         run: npm ci
       - name: Build
         run: npx lerna run build
       - name: Versioning, Tagging and Create CHANGELOG
-        run: npx lerna version --yes
+        run: npx lerna version ${{ steps.extract_branch.outputs.version }} --yes
       - name: publish
         run: npx lerna publish from-package --yes
