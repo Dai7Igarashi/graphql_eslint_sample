@@ -46,8 +46,8 @@ jobs:
       - name: Extract branch from git ref
         # name = release / version = major, minor, patch
         run: |
-          echo "::set-output name=name::${GITHUB_REF#refs/*/}"
-          echo "::set-output name=version::${GITHUB_REF##*/}"
+          echo "name=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
+          echo "version=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
         id: extract_branch
       - name: Install
         run: npm ci
@@ -58,7 +58,7 @@ jobs:
       - name: publish
         run: npx lerna publish from-package --yes
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: "chore(release): publish"
