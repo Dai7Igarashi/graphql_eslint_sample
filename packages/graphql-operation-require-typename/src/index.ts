@@ -1,7 +1,7 @@
-import { CustomRule } from "./graphql-operation-require-typename";
+import { CustomRule } from './graphql-operation-require-typename';
 
 const rules = {
-  "graphql-operation-require-typename": CustomRule,
+  'graphql-operation-require-typename': CustomRule,
 };
 
 export { rules };

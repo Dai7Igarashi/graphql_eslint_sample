@@ -1,6 +1,7 @@
 {
   "name": "graphql-eslint-sample",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "private": true,
   "workspaces": [
@@ -12,13 +13,27 @@
   },
   "scripts": {
     "build": "lerna run build",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "lint": "run-s lint:*",
+    "lint:eslint": "eslint --cache --config eslint.config.js",
+    "lint:prettier": "prettier --check '**/*.{js,ts,json,md}'",
+    "fix": "run-s fix:*",
+    "fix:eslint": "eslint --config eslint.config.js --fix",
+    "fix:prettier": "prettier --write ."
   },
   "author": "Daichi Igarashi<40178733+Dai7Igarashi@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.2",
+    "eslint-plugin-unused-imports": "^3.0.0",
     "lerna": "^8.0.0",
     "npm-run-all2": "^6.1.1",
+    "prettier": "^3.1.1",
     "typescript": "^5.3.3"
   }
 }
