@@ -61,6 +61,6 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          title: "chore(release): publish"
-          body: "This is an auto-generated PR."
-          base: "main"
+          title: 'chore(release): publish'
+          body: 'This is an auto-generated PR.'
+          base: 'main'
