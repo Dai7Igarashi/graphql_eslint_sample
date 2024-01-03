@@ -1,0 +1,58 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`no __typename in inline-fragment 1`] = `
+"#### ⌨️ Code
+
+       1 |         query getEntry($amebaId: String!, $entryId: Int64!) {
+       2 |           entry(amebaId: $amebaId, entryId: $entryId) {
+       3 |             ... on Entry {
+       4 |               title
+       5 |             }
+       6 |             ... on Failure {
+       7 |               code
+       8 |             }
+       9 |           }
+      10 |         }
+
+#### ❌ Error 1/2
+
+      3 |             ... on Entry {
+    > 4 |               title
+        |               ^^^^^ Require __typename in all fragment and inline-fragment
+      5 |             }
+
+#### 💡 Suggestion: Add __typename before field
+
+     1 |         query getEntry($amebaId: String!, $entryId: Int64!) {
+     2 |           entry(amebaId: $amebaId, entryId: $entryId) {
+     3 |             ... on Entry {
+     4 |               __typename
+     5 |               title
+     6 |             }
+     7 |             ... on Failure {
+     8 |               code
+     9 |             }
+    10 |           }
+    11 |         }
+
+#### ❌ Error 2/2
+
+      6 |             ... on Failure {
+    > 7 |               code
+        |               ^^^^ Require __typename in all fragment and inline-fragment
+      8 |             }
+
+#### 💡 Suggestion: Add __typename before field
+
+     1 |         query getEntry($amebaId: String!, $entryId: Int64!) {
+     2 |           entry(amebaId: $amebaId, entryId: $entryId) {
+     3 |             ... on Entry {
+     4 |               title
+     5 |             }
+     6 |             ... on Failure {
+     7 |               __typename
+     8 |               code
+     9 |             }
+    10 |           }
+    11 |         }"
+`;
