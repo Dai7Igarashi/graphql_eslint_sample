@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "lerna run build",
-    "test": "lerna run test",
+    "test": "lerna run test && vitest run",
     "lint": "run-s lint:*",
     "lint:eslint": "eslint --cache --config eslint.config.js",
     "lint:prettier": "prettier --check '**/*.{js,ts,json,md}'",
@@ -34,6 +34,7 @@
     "lerna": "^8.0.0",
     "npm-run-all2": "^6.1.1",
     "prettier": "^3.1.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.1"
   }
 }

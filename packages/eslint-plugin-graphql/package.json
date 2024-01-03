@@ -23,9 +23,15 @@
   "scripts": {
     "build": "run-p build:*",
     "build:cjs": "tsc -p tsconfig.json",
-    "test": "run-p test:*",
-    "test:ts": "tsc -p tsconfig.json --noEmit"
+    "test": "run-s test:*",
+    "test:tsc": "tsc -p tsconfig.json --noEmit"
   },
   "author": "Daichi Igarashi <40178733+Dai7Igarashi@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@graphql-eslint/eslint-plugin": "^3.20.1"
+  },
+  "devDependencies": {
+    "graphql": "^16.8.1"
+  }
 }
