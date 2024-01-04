@@ -17,7 +17,7 @@ export const rule: GraphQLESLintRule = {
       url: '',
       examples: [
         {
-          title: 'Incorrect(inline-fragment)',
+          title: 'Incorrect (inline-fragment)',
           code: /* GraphQL */ `
             query getEntry($amebaId: String!, $entryId: Int64!) {
               entry(amebaId: $amebaId, entryId: $entryId) {
@@ -39,7 +39,7 @@ export const rule: GraphQLESLintRule = {
           `,
         },
         {
-          title: 'Incorrect(fragment)',
+          title: 'Incorrect (fragment)',
           code: /* GraphQL */ `
             query getEntry($amebaId: String!, $entryId: Int64!) {
               entry(amebaId: $amebaId, entryId: $entryId) {
@@ -60,7 +60,7 @@ export const rule: GraphQLESLintRule = {
           `,
         },
         {
-          title: 'Correct(inline-fragment)',
+          title: 'Correct (inline-fragment)',
           code: /* GraphQL */ `
             query getEntry($amebaId: String!, $entryId: Int64!) {
               entry(amebaId: $amebaId, entryId: $entryId) {
@@ -77,7 +77,7 @@ export const rule: GraphQLESLintRule = {
           `,
         },
         {
-          title: 'Correct(fragment)',
+          title: 'Correct (fragment)',
           code: /* GraphQL */ `
             query getEntry($amebaId: String!, $entryId: Int64!) {
               entry(amebaId: $amebaId, entryId: $entryId) {
