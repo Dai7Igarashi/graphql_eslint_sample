@@ -60,7 +60,7 @@ export const rule: GraphQLESLintRule = {
           `,
         },
         {
-          title: 'Correct (inline-fragment)',
+          title: 'Correct(inline-fragment)',
           code: /* GraphQL */ `
             query getEntry($amebaId: String!, $entryId: Int64!) {
               entry(amebaId: $amebaId, entryId: $entryId) {
