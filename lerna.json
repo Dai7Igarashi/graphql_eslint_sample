@@ -4,6 +4,7 @@
   "version": "independent",
   "npmClient": "npm",
   "useNx": false,
+  "includeMergedTags": true,
   "command": {
     "publish": {
       "conventionalCommits": true,

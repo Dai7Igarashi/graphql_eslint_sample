@@ -53,10 +53,11 @@ jobs:
         run: npm ci
       - name: Build
         run: npx lerna run build
-      - name: Versioning, Tagging and Create CHANGELOG
-        run: npx lerna version ${{ steps.extract_branch.outputs.version }} --yes
+      # - name: Versioning, Tagging and Create CHANGELOG
+      #   run: npx lerna version ${{ steps.extract_branch.outputs.version }} --yes
       - name: publish
-        run: npx lerna publish from-package --yes
+        # run: npx lerna publish from-package --yes
+        run: npx lerna publish ${{ steps.extract_branch.outputs.version }} --conventional-commits --create-release github --yes --no-private
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
