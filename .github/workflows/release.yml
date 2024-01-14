@@ -6,6 +6,7 @@ on:
       - release/major
       - release/minor
       - release/patch
+      - release/hoge
 
 jobs:
   # test:
