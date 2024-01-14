@@ -54,7 +54,7 @@ export const rule: GraphQLESLintRule = {
             }
 
             fragment EntryFields on Entry {
-              # __typename is required in fragment
+              # __typename is required in fragment.
               title
             }
           `,
