@@ -8,7 +8,6 @@
   "command": {
     "publish": {
       "conventionalCommits": true,
-      "createRelease": "github",
       "noPrivate": true,
       "registry": "https://npm.pkg.github.com"
     },
